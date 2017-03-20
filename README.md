@@ -1,11 +1,11 @@
-#Over Project 1
+# Over Project 1
 
-##Jouw opdracht: van zoeken naar helpen vinden
+## Jouw opdracht: van zoeken naar helpen vinden
 
 Gebruik de API's van funda om naar jouw eigen ideeën en inzicht een nieuwe manier van zoeken naar huizen te ontwikkelen. Een lijst, op een kaart, of een andere manier, alles valt te overwegen! Het doel is: help de funda zoeker snel en gemakkelijk zijn perfecte huis te vinden.
 
 
-##User Stories
+## User Stories
 
 In de basis gaat het om de volgende 4 scenarios (‘user stories’):
 
