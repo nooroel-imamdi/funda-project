@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Funda</title>
+	<link rel="stylesheet" href="static/css/style.css">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Amiko:400,600,700" rel="stylesheet"> -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i" rel="stylesheet"> -->
+</head>
+<body>
+	<nav>
+		<a href="#" title="Funda" id="home"></a>
+	</nav>
+	<section id="search">
+		<form id="search-field">
+			<fieldset>
+				<label>
+					<input type="text" name="" id="user-input" placeholder="Plaats, buurt, adres etc." autocomplete="off" datalist="autosuggest" autofocus>
+					<ul id="autosuggest" class="hide"></ul>
+					<button type="submit" name="" id="search-btn">Zoek</button>
+				</label>
+
+			</fieldset>
+			<fieldset>
+	            <label>Min prijs
+	                <select id="minimum">
+	                    <option value="100000">&euro; 100.000</option>
+	                    <option value="200000">&euro; 200.000</option>
+	                    <option value="300000">&euro; 300.000</option>
+	                    <option value="400000">&euro; 400.000</option>
+	                    <option value="500000">&euro; 500.000</option>
+	                </select>
+	                <span></span>
+	            </label>
+
+	            <label>Max prijs
+	                <select id="maximum">
+	                    <option value="200000">&euro; 200.000</option>
+	                    <option value="300000" selected>&euro; 300.000</option>
+	                    <option value="400000">&euro; 400.000</option>
+	                    <option value="500000">&euro; 500.000</option>
+	                    <option value="600000">&euro; 600.000</option>
+	                </select>
+	                <span></span>
+	            </label>
+	            <label>Soort gebouw
+	                <select id="building">
+	                    <option value="woonhuis" selected>Woonhuis</option>
+	                    <option value="appartement">Appartement</option>
+	                </select>
+	                <span></span>
+	            </label>
+	            <!-- <label>
+	                <input type="number" placeholder="Aantal kamers" id="aantalKamers">
+	            </label> -->
+	        </fieldset>
+		</form>
+		<p id="search-userinput"></p>
+	</section>
+
+	<section id="overview" class="hide">
+	</section>
+	<section id="overviewCity" class="hide"></section>
+	<section id="detail" class="hide"></section>
+
+	<!-- <script id="overview-template" type="text/x-handlebars-template">
+		{{#each Objects}}
+		<article>
+			<img src="{{FotoLarge}}" />
+			<h1><a href="#residences/{{GroupByObjectType}}">{{Adres}}</a></h1>
+			<p>{{Postcode}} {{Woonplaats}}</p>
+			<p>{{{PrijsGeformatteerdHtml}}}</p>
+			<p>{{Soort-aanbod}}</p>
+		</article>
+		{{/each}}
+	</script> -->
+	<script id="overview-template" type="text/x-handlebars-template">
+		{{#each Objects}}
+		<article>
+			<img src="{{FotoLarge}}" />
+			<h1><a href="#residences/{{GroupByObjectType}}">{{Adres}}</a></h1>
+			<p>{{Postcode}} {{Woonplaats}}</p>
+			<p>{{{PrijsGeformatteerdHtml}}}</p>
+			<p>{{Soort-aanbod}}</p>
+			<p>Aantal kamer: {{AantalKamers}}</p>
+		</article>
+		{{/each}}
+	</script>
+
+	<script id="overviewCity-template" type="text/x-handlebars-template">
+		{{#each Objects}}
+		<article>
+			<img src="{{FotoLarge}}" />
+			<h1><a href="#residences/{{GroupByObjectType}}">{{Adres}}</a></h1>
+			<p>{{Postcode}} {{Woonplaats}}</p>
+			<p>{{{PrijsGeformatteerdHtml}}}</p>
+			<p>{{Soort-aanbod}}</p>
+		</article>
+		{{/each}}
+	</script>
+
+	<script id="detail-template" type="text/x-handlebars-template">
+		<article>
+			<img src="{{HoofdFoto}}" />
+			<h1>{{Adres}}</h1>
+			<p>{{Postcode}} {{Plaats}}</p>
+			<p>{{objectType}}</p>
+			<p>{{{PrijsGeformatteerd}}}</p>
+			<p>Ligging: {{Ligging}}</p>
+			<p>{{Makelaar}}</p>
+
+			<!-- <p>{{VolledigeOmschrijving}}</p> -->
+			<!-- <a href="" id="back-button">Terug</a> -->
+		</article>
+	</script>
+	<script id="autosuggest-template" type="text/x-handlebars-template">
+		{{#each Results}}
+			<li>{{Display.Naam}}</li>
+		{{/each}}
+	</script>
+
+	<script src="static/js/config.js"></script>
+	<script src="static/js/handlebars-v4.0.5.js"></script>
+	<script src="static/js/routie.js"></script>
+	<script src="static/js/app.js"></script>
+</body>
+</html>
